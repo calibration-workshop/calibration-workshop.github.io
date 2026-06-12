@@ -54,6 +54,7 @@
           <li><a href="#speakers">Speakers</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#accepted-papers">Accepted papers</a></li>
+          <li><a href="#report">Report</a></li>
           <li><a href="#organizers">Organizers</a></li>
           <li><a href="#tips">Tips for attendees</a></li>
         </ul>
@@ -658,6 +659,188 @@
 
     </section><!-- /Accepted Papers Section -->
 
+
+
+    <!-- Report Section -->
+    <section id="report" class="schedule section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Report</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="200">
+
+        <p>
+          The AISTATS 2026 workshop "Towards Trustworthy Predictions: Theory and Applications of
+          Calibration for Modern AI" was held on May 5th, 2026 at the conference venue in Tangier,
+          Morocco. The workshop featured a tutorial, invited talks, contributed posters, and a great deal of
+          interactive discussion. The slides and papers from the workshop are available on this website. In
+          this report, we aim to briefly go over some of the highlights.
+        </p>
+
+        <p>
+          The motivation for organizing the workshop was that the topic of calibration is increasingly
+          important, yet studied in different communities (computer science including AI and ML, statistics,
+          economics, forecasting, etc), which have relatively limited interaction. This can make it
+          challenging to keep up with the latest developments, and has led to instances of researchers
+          from different communities reinventing the same concept. Therefore, <strong>the topic of calibration is
+          an area where building a strong international community could have significant benefits</strong>.
+          The perception of the organizers was that the community and attendees showed a good interest
+          and turnout. The picture below shows a well-attended room of perhaps 80 (all three workshops
+          had a capacity of 150 seats).
+        </p>
+
+        <div class="text-center my-4">
+          <img src="assets/img/report/report_fig1.jpg" class="img-fluid rounded" alt="Workshop attendees" style="max-height: 420px; width: auto;">
+        </div>
+
+        <h3>Tutorial</h3>
+        <p>
+          With this in mind, the first event of the workshop was a 90-minute tutorial on calibration by
+          <a href="https://www.bristol.ac.uk/people/person/Peter-Flach-a7f5720a-024e-48a2-9cc8-c3d673798c20/" target="_blank" rel="noopener noreferrer"><strong>Peter Flach</strong></a> (University of Bristol), who has previously co-authored a well-known
+          <a href="https://arxiv.org/abs/2112.10327" target="_blank" rel="noopener noreferrer">survey on calibration</a>. Peter's talk started from the basic definition of calibration: a prediction
+          for the probability of an event (such as a patient having heart disease) is calibrated if the
+          fraction of people who have heart disease among those with any specific prediction&mdash;say 20%&mdash;is
+          actually equal to the predicted fraction (i.e., 20%). Peter presented a variety of motivations for
+          calibration, including based on utility theory and efficiency in adapting classifiers to updated
+          class priors. The tutorial concluded with a variety of more advanced topics, Including various
+          forms of re-calibration. For more details please see the <a href="slides/Tutorial_Peter_Flach.pdf" target="_blank" rel="noopener noreferrer">slides</a>.
+        </p>
+
+        <div class="row my-4 g-2 justify-content-center">
+          <div class="col-auto">
+            <img src="assets/img/report/report_fig2.png" class="img-fluid rounded" alt="Florian Buettner's talk — distribution shift when recalibrating" style="max-height: 280px; width: auto;">
+          </div>
+          <div class="col-auto">
+            <img src="assets/img/report/report_fig3.png" class="img-fluid rounded" alt="Speaker at the podium" style="max-height: 280px; width: auto;">
+          </div>
+        </div>
+
+        <h3>Invited talks</h3>
+        <p>The workshop then continued with several exciting talks covering various state-of-the-art
+          research directions in calibration.</p>
+
+        <p>
+          The first talk after the tutorial was by <a href="https://www.universiteitleiden.nl/en/staffmembers/ewout-steyerberg#tab-1" target="_blank" rel="noopener noreferrer"><strong>Ewout W. Steyerberg</strong></a> (University Medical Center Utrecht),
+          on trustworthy patient-level predictions. Ewout focused on a central question in clinical
+          prediction: when can we trust a number such as a patient's predicted risk? He emphasized that
+          calibration is a crucial part of assessing trustworthiness, but also that calibration is usually
+          evaluated at the population level, while interpreting a prediction for one individual patient is
+          much more delicate. A recurring theme was that uncertainty in medical prediction has many
+          sources, including finite-sample uncertainty, modeling choices, and lack of applicability to new
+          settings. Therefore, great caution is needed when interpreting individual risk estimates, even
+          though they can still be valuable for risk communication and shared decision-making.
+        </p>
+
+        <p>
+          <a href="https://people.eecs.berkeley.edu/~nika/" target="_blank" rel="noopener noreferrer"><strong>Nika Haghtalab</strong></a> (University of California at Berkeley) then gave a talk on
+          multi-objective learning as an algorithmic toolbox for obtaining predictions that are useful
+          across many downstream tasks and losses. The talk connected calibration to a broader framework
+          in which one wants a single predictor to perform well simultaneously for many groups,
+          distributions, and loss functions. Nika explained how ideas from multi-calibration, federated
+          learning, and distributionally robust optimization can be viewed through a common lens. She also
+          described algorithmic ideas such as on-demand sampling and min-max optimization, and highlighted
+          recent results showing that, in some regimes, optimizing for many tasks and losses can be nearly
+          as statistically efficient as optimizing for just one.
+        </p>
+
+        <p>
+          After lunch, <a href="https://mlo-lab.github.io/author/florian-buettner/" target="_blank" rel="noopener noreferrer"><strong>Florian Buettner</strong></a> (Goethe-University Frankfurt/German Cancer Research Center
+          (DKFZ)) talked about calibrated uncertainty estimates for biomedical AI. He emphasized that in
+          medical settings, confident but wrong predictions can cause real harm, especially under
+          distribution shift, where deep networks may make high-confidence errors. The talk highlighted
+          applications in dermatology, pathology, retinal imaging, and blood cancer classification, and
+          presented an "audit, improve, monitor" framework in which ModelAuditor identifies clinically
+          relevant failure modes and suggests targeted fixes. Florian also connected these ideas to
+          generative models and LLMs, discussing kernel- and spectral-entropy methods for estimating
+          uncertainty from generated outputs.
+        </p>
+
+        <p>
+          The final talk was by <a href="https://people.math.ethz.ch/~ziegelj/" target="_blank" rel="noopener noreferrer"><strong>Johanna Ziegel</strong></a> (ETH Zurich), on calibration of probabilistic
+          predictions. Johanna started from the setting where a prediction is not a single best guess, but
+          a full predictive distribution intended to quantify uncertainty about a future outcome. She
+          surveyed several notions of calibration for probabilistic forecasts, including probabilistic
+          calibration, auto-calibration, isotonic calibration, threshold calibration, quantile calibration,
+          and marginal calibration, clarifying that these notions can differ substantially outside the
+          binary setting. The talk then developed connections with conformal prediction and isotonic
+          distributional regression, and discussed how conformal calibration guarantees can be used to
+          obtain strong out-of-sample calibration guarantees. The talk concluded with applications such as
+          temperature forecasting and length-of-stay prediction in intensive care, illustrating how these
+          ideas can be used in realistic forecasting problems.
+        </p>
+
+        <h3>Paper awards</h3>
+        <p>The technical program was rounded out by presentations from the recipients of the paper awards:</p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-3">
+            <span class="badge bg-warning text-dark me-2">🏆 Student Paper Award</span>
+            <a href="https://openreview.net/forum?id=7Fh0Rb2nsh" target="_blank"><strong>From Entropy to Calibrated Uncertainty: Training Language Models to Reason About Uncertainty</strong></a>;
+            by Azza Jenane, Nassim Walha, Lukas Kuhn, Florian Buettner
+          </li>
+          <li class="mb-3">
+            <span class="badge bg-warning text-dark me-2">🏆 Non-Student Paper Award</span>
+            <a href="https://openreview.net/forum?id=dy7XNC3W0g" target="_blank"><strong>Calibrating the Calibration Tester: Optimal Binning and Minimax Calibration Testing for Continuous Predictive Models</strong></a>;
+            by Alon Kipnis
+          </li>
+        </ul>
+
+        <h3>Poster session</h3>
+        <p>
+          Another component of the workshop was the poster session. The workshop featured
+          approximately 45 posters, with topics ranging from theory, methods, algorithms, and
+          applications of calibration. The conference venue had a unique outdoor poster session with a
+          great deal of natural sunlight, which stimulated lively discussion among the presenters and
+          attendees.
+        </p>
+
+        <div class="text-center my-4">
+          <img src="assets/img/report/report_fig4.jpg" class="img-fluid rounded" alt="Outdoor poster session" style="max-width: 560px; width: 100%;">
+        </div>
+        <div class="text-center my-4">
+          <img src="assets/img/report/report_fig5.png" class="img-fluid rounded" alt="Roundtable discussion" style="max-width: 560px; width: 100%;">
+        </div>
+
+        <h3>Roundtable discussion</h3>
+        <p>
+          The workshop ended with a 45-minute roundtable discussion where speakers and attendees shared
+          their key concerns and perspectives. Topics included:
+        </p>
+
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>The importance of choosing sound evaluation metrics for calibration, and how different scenarios require different evaluation approaches beyond the popular Expected Calibration Error (ECE) — <em>Johanna Ziegel, Sebastian Gruber</em></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>We are better at correcting miscalibration than estimating or evaluating it, leaving room for improvement at a fundamental level — <em>Eugene Berta</em></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>Calibration from the perspective of algorithmic decision making captures specific forms of failure due to miscalibration, but these are still missing outside of the binary case — <em>Nika Haghtalab</em></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>The ECE remains popular partly because there has not been a focused demonstration of its failures — <em>Edgar Dobriban</em></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>Miscalibration happening despite strong predictive performance of modern ML methods surprises many; the notion of <a href="https://arxiv.org/abs/2209.04892" target="_blank" rel="noopener noreferrer"><em>calibeating</em></a> offers one answer, showing one can gain calibration without losing expertise — <em>Souhaib Ben Taieb, Nika Haghtalab</em></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>New and emerging research areas in AI such as automated research raise questions about how we should use probabilistic predictions going forward — <em>Nika Haghtalab</em></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>The community should think about fundamental limits in the area of calibration — <em>Souhaib Ben Taieb</em></li>
+        </ul>
+
+        <h3>Looking forward</h3>
+        <p>
+          Several attendees mentioned interest in participating in or leading a community on topics related
+          to the workshop. The organizers believe the following activities could be valuable:
+        </p>
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>Further workshops and meetings focusing on calibration, associated with major ML conferences or independent venues such as BIRS, Oberwolfach, etc.</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>Tutorials on calibration delivered at conferences and/or recorded online for improved accessibility.</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>Community resources including a web repository of papers, videos, computational tools/packages, and links to events.</li>
+        </ul>
+
+        <div class="text-center my-4">
+          <img src="assets/img/report/report_fig6.jpg" class="img-fluid rounded" alt="View from the conference venue" style="max-height: 420px; width: auto;">
+        </div>
+
+        <p>
+          The organizers thank the speakers, the attendees, and the AISTATS conference organizers
+          (workshop chairs Quentin Berthet and Claire Vernade) for their great help and support.
+        </p>
+
+      </div>
+
+    </section><!-- /Report Section -->
 
 
     <!-- Organizersrs Section -->
